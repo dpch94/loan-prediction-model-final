@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Deploy Loan Status ML model using flask</title>
+</head>
+
+<body>
+ <div class="login">
+	<h1>Welcome to Loan Status classifier</h1>
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="ApplicantIncome" placeholder="Applicant Income" required="required" />
+        <input type="text" name="CoapplicantIncome" placeholder="Coapplicant Income" required="required" />
+        <br><br>
+        <input type="text" name="LoanAmount" placeholder="Loan Amount" required="required" />
+        <input type="text" name="Loan_Amount_Term" placeholder="Loan Amount Term" required="required" />
+        <br><br>
+        <input type="text" name="Credit_History" placeholder="Credit History" required="required" />
+        <br><br>
+        <input type="text" name="Gender_Female" placeholder="Gender Female" required="required" />
+        <input type="text" name="Gender_Male" placeholder="Gender Male" required="required" />
+        <br><br>
+        <input type="text" name="Married_No" placeholder="Married No" required="required" />
+        <input type="text" name="Married_Yes" placeholder="Married Yes" required="required" />
+        <br><br>
+        <input type="text" name="Dependents_0" placeholder="0 Dependents" required="required" />
+        <input type="text" name="Dependents_1" placeholder="1 Dependent" required="required" />
+        <br><br>
+        <input type="text" name="Dependents_2" placeholder="2 Dependents" required="required" />
+        <input type="text" name="Dependents_3+" placeholder="3 or more Dependents" required="required" />
+        <br><br>
+        <input type="text" name="Education_Graduate" placeholder="Education Graduate" required="required" />
+        <input type="text" name="Education_NotGraduate" placeholder="Not Education Graduate" required="required" />
+        <br><br>
+    <input type="text" name="Self_Employed_No" placeholder="Not Self Employed" required="required" />
+    <input type="text" name="Self_Employed_Yes" placeholder="Self Employed" required="required" />
+    <br><br>
+    <input type="text" name="Property_Area_Rural" placeholder="Property in Rural Area" required="required" />
+    <input type="text" name="Property_Area_Semiurban" placeholder="Property in Semiurban Area" required="required" />
+    <br><br>
+    <input type="text" name="Property_Area_Urban" placeholder="Property in Urban Area" required="required" />
+    <br><br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Submit</button>
+    </form>
+ 
+   <br>
+   <br>
+   {{ output }}
+
+ </div>
+
+
+</body>
+</html>
