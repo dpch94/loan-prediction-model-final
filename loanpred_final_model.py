@@ -20,7 +20,7 @@ import pickle
 import warnings
 warnings.filterwarnings('ignore')
 
-from sklearn.model_selection import train_test_split   # To split the dataset into train and test set
+from sklearn.model_selection import train_test_split  # To split the dataset into train and test set
 
 from sklearn import preprocessing
 from sklearn.metrics import f1_score
