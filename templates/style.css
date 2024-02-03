@@ -1,0 +1,38 @@
+*{
+    box-sizing: border-box;
+    
+}
+html,body{
+    height: 100%;
+    padding: 0px;
+	margin: 20px auto;
+    color: black;
+    background: steelblue;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Lato', sans-serif;
+    color: black;
+    width: 50%;
+	margin: 20px auto;
+
+
+}
+form{
+	width: 60%;
+	margin: 30px auto;
+
+}
+form div{
+	margin-top: 5px;
+}
+input {
+    width: 20%;
+    
+  }
+.btn_submit {
+    background-color: green;
+    text-align: center;
+    font-weight:bold;
+  }

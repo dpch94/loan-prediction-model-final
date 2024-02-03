@@ -20,7 +20,7 @@ def home():
 @app.route('/predict',methods=['POST'])
 def predict():
     '''
-    For rendering results on HTML GUI
+    For rendering results on HTML
     '''
     labels = ['granted', 'not granted']
 
