@@ -22,17 +22,18 @@ def predict():
     '''
     For rendering results on HTML
     '''
-    labels = ['granted', 'not granted']
+    labels = ['not granted','granted']
 
     features = [float(x) for x in request.form.values()]
    
     values = [np.array(features)]
     
     model = load_model()
+    
     prediction = model.predict(values)
 
     result = labels[prediction[0]]
-
+    
     return render_template('index.html', output='The Loan is {}'.format(result))
 
 
