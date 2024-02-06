@@ -24,11 +24,11 @@ def predict():
     '''
     labels = ['not granted','granted']
    
-    feature1 = request.form['ApplicantIncome']
-    feature2 = request.form['CoapplicantIncome']
-    feature3 = request.form['LoanAmount']
-    feature4 = request.form['Loan_Amount_Term']
-    feature5 = request.form['Credit_History']
+    feature1 = float(request.form['ApplicantIncome'])
+    feature2 = float(request.form['CoapplicantIncome'])
+    feature3 = float(request.form['LoanAmount'])
+    feature4 = float(request.form['Loan_Amount_Term'])
+    feature5 = float(request.form['Credit_History'])
     feature6 = request.form['Gender']
     feature7 = request.form['Married']
     feature8 = request.form['Dependents']
