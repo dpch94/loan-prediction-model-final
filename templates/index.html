@@ -10,14 +10,75 @@
  <div>
 	<h1>Welcome to Loan Status classifier</h1>
   <h2>Please enter the values in all fields and then click Submit to check the loan approval status</h2>
-    <form action="{{ url_for('predict')}}"method="post">
+    <form action="{{ url_for('predict')}}"method="post">    
+
     	<input type="text" name="ApplicantIncome" placeholder="Applicant Income" required="required" />
         <input type="text" name="CoapplicantIncome" placeholder="Co-applicant Income" required="required" />
         <br><br>
         <input type="text" name="LoanAmount" placeholder="Loan Amount" required="required" />
         <input type="text" name="Loan_Amount_Term" placeholder="Loan Amount Term in months" required="required" />
         <br><br>
-        <h3>In each of the fields below, Please enter 1 if True or 0 if False</h3>
+
+        <label for="Credit_History">Credit History:</label>
+        <select id="Credit_History" name="Credit_History" required>
+          <option value="select">Select</option>
+          <option value="1.0">1.0</option>
+          <option value="0.0">0.0</option>        
+        </select>
+        <br><br>
+        <label for="Gender">Gender:</label>
+        <select id="Gender" name="Gender" required>
+          <option value="select">Select</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>        
+        </select>
+        <br><br>
+        
+        <label for="Married">Married:</label>
+        <select id="Married" name="Married" required>
+          <option value="select">Select</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>        
+        </select>
+        <br><br>
+
+        <label for="Dependents">Dependents:</label>
+        <select id="Dependents" name="Dependents" required>
+          <option value="select">Select</option>
+          <option value="0">No Dependents</option>
+          <option value="1">1 Dependent</option>
+          <option value="2">2 Dependents</option>
+          <option value="3+">3 or more Dependents</option>   
+        </select>
+        <br><br>
+
+        <label for="Education">Education:</label>
+        <select id="Education" name="Education" required>
+          <option value="select">Select</option>
+          <option value="Graduate">Graduate</option>
+          <option value="Not Graduate">Not Graduate</option>        
+        </select>
+        <br><br>
+
+        <label for="Self_Employed">Self Employed:</label>
+        <select id="Self_Employed" name="Self_Employed" required>
+          <option value="select">Select</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>        
+        </select>
+        <br><br>
+
+        <button type="submit" class="btn_submit">Submit</button>
+    </form>    
+
+        <!-- <label for="Property_Area">Property Area:</label>
+        <select id="Property_Area" name="Property_Area" required>
+          <option value="select">Select</option>
+          <option value="Semiurban">Semiurban</option>
+          <option value="Rural">Rural</option>
+          <option value="Urban">Urban</option>            
+        </select>
+      
         <br><br>
         <input type="text" name="Credit_History" placeholder="Credit History" required="required" />
         <br><br>
@@ -42,17 +103,14 @@
         <input type="text" name="Property_Area_Rural" placeholder="Property in Rural Area" required="required" />
         <input type="text" name="Property_Area_Semiurban" placeholder="Property in Semi-urban Area" required="required" />
         <br><br>
-        <input type="text" name="Property_Area_Urban" placeholder="Property in Urban Area" required="required" />
-        <br><br>
-        <button type="submit" class="btn_submit">Submit</button>
-    </form>
+        <input type="text" name="Property_Area_Urban" placeholder="Property in Urban Area" required="required" />-->
+                
+    
  
    <br>
    <br>
    {{ output }}
 
  </div>
-
-
 </body>
 </html>
