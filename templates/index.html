@@ -10,23 +10,9 @@
  <div>
 	<h1>Welcome to Loan Status classifier</h1>
   <h2>Please enter the values in all fields and then click Submit to check the loan approval status</h2>
-    <form action="{{ url_for('predict')}}"method="post">    
-
-    	<input type="text" name="ApplicantIncome" placeholder="Applicant Income" required="required" />
-        <input type="text" name="CoapplicantIncome" placeholder="Co-applicant Income" required="required" />
-        <br><br>
-        <input type="text" name="LoanAmount" placeholder="Loan Amount" required="required" />
-        <input type="text" name="Loan_Amount_Term" placeholder="Loan Amount Term in months" required="required" />
-        <br><br>
-
-        <label for="Credit_History">Credit History:</label>
-        <select id="Credit_History" name="Credit_History" required>
-          <option value="select">Select</option>
-          <option value="1.0">1.0</option>
-          <option value="0.0">0.0</option>        
-        </select>
-        <br><br>
-        <label for="Gender">Gender:</label>
+    <form action="{{ url_for('predict')}}"method="post">
+      
+      <label for="Gender">Gender:</label>
         <select id="Gender" name="Gender" required>
           <option value="select">Select</option>
           <option value="Male">Male</option>
@@ -66,7 +52,19 @@
           <option value="Yes">Yes</option>
           <option value="No">No</option>        
         </select>
-        <br><br>            
+        <br><br>
+
+    	<input type="number" name="ApplicantIncome" placeholder="Applicant Income" required="required" />
+        <input type="number" name="CoapplicantIncome" placeholder="Co-applicant Income" required="required" />
+        <br><br>
+        <input type="number" name="LoanAmount" placeholder="Loan Amount" required="required" />
+        <input type="number" name="Loan_Amount_Term" placeholder="Loan Amount Term in days" required="required" />
+        <br><br>
+
+        <input type="number" name="Credit_History" placeholder="Credit History b/w 0 and 1" required="required" />
+       
+        <br><br>
+                    
 
         <label for="Property_Area">Property Area:</label>
         <select id="Property_Area" name="Property_Area" required>

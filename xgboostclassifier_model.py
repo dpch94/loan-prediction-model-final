@@ -92,7 +92,7 @@ test_dataset=test_dataset[X_train11.columns]
 print(test_dataset)
 
 xgclf = xgb.XGBClassifier(
-    tree_method="hist", enable_categorical=True, max_cat_to_onehot=5)
+    tree_method="hist", enable_categorical=True, max_cat_to_onehot=6)
 parameters = {
     'n_estimators': [80, 90, 100, 125, 150],
     'max_depth': [2, 3, 4, 5, 6, 8, 16, None],
