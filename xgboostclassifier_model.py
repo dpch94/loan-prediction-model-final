@@ -89,44 +89,34 @@ for c in missing_levels_cols41:
 
 # Select only those columns which are there in training data
 test_dataset=test_dataset[X_train11.columns]
-print(test_dataset)
+#print(test_dataset)
 
 xgclf = xgb.XGBClassifier(
     tree_method="hist", enable_categorical=True, max_cat_to_onehot=6)
-parameters = {
-    'n_estimators': [80, 90, 100, 125, 150],
-    'max_depth': [2, 3, 4, 5, 6, 8, 16, None],
-    'learning_rate': [0.01, 0.03, 0.1, 0.3, 0.5]
-}
-xgclf = GridSearchCV(xgclf, parameters, cv=5)
+
 xgclf.fit(X_train11, y_train11)
 
-print(xgclf)
+#print(xgclf)
 
-xgclf.best_score_
 
-print(f1_score(y_train11,xgclf.predict(X_train11)))
+#print(f1_score(y_train11,xgclf.predict(X_train11)))
 
-print(xgclf.predict(X_test11))
+#print(xgclf.predict(X_test11))
 
-print(f1_score(y_test11,xgclf.predict(X_test11)))
+#print(f1_score(y_test11,xgclf.predict(X_test11)))
 
 X_train11.shape
 
 final_tst = pd.DataFrame(data=test_dataset)
 final_tst.columns= test_dataset.columns
-print(final_tst.head())
-print(final_tst.shape)
 
 final_tst
 
 final_tst.info()
 
-print(final_tst.columns)
-
 predictions1 = xgclf.predict(final_tst)
 
-print(predictions1)
+#print(predictions1)
 
 #save the model 
 filename = 'xgboost_loanpred_model.pkl'
