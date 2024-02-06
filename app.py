@@ -17,24 +17,32 @@ def home():
     return render_template('index.html')
 
 #predict the result and return it
-@app.route('/predict',methods=['POST'])
+@app.route('/predict', methods=(['POST']))
 def predict():
     '''
     For rendering results on HTML
     '''
     labels = ['not granted','granted']
-
-    features = [float(x) for x in request.form.values()]
    
-    values = [np.array(features)]
+    feature1 = request.form['ApplicantIncome']
+    feature2 = request.form['CoapplicantIncome']
+    feature3 = request.form['LoanAmount']
+    feature4 = request.form['Loan_Amount_Term']
+    feature5 = request.form['Credit_History']
+    feature6 = request.form['Gender']
+    feature7 = request.form['Married']
+    feature8 = request.form['Dependents']
+    feature9= request.form['Education']
+    feature10= request.form['Self_Employed']
     
     model = load_model()
-    
-    prediction = model.predict(values)
+
+    prediction = model.predict([[feature1, feature2, feature3, feature4, feature5, feature6, feature7, feature8, feature9, feature10]])  
 
     result = labels[prediction[0]]
     
-    return render_template('index.html', output='The Loan is {}'.format(result))
+    return render_template('index.html', output='The Loan is {}'.format(result)) 
+    
 
 
 if __name__ == "__main__":
