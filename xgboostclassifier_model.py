@@ -10,10 +10,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 from sklearn.model_selection import train_test_split
-from sklearn.model_selection import GridSearchCV
 import xgboost as xgb
-from sklearn.metrics import f1_score
-from sklearn import preprocessing
 
 loan_data1  = pd.read_csv("https://raw.githubusercontent.com/dphi-official/Datasets/master/Loan_Data/loan_train.csv" )
 
@@ -46,8 +43,6 @@ X_train11['Education'] = X_train11['Education'].astype('category')
 X_train11['Self_Employed'] = X_train11['Self_Employed'].astype('category')
 X_train11['Property_Area'] = X_train11['Property_Area'].astype('category')
 
-X_train11.dtypes
-
 X_test11['Gender'] = X_test11['Gender'].astype('category').cat.set_categories(X_train11['Gender'].cat.categories)
 
 X_test11['Married'] = X_test11['Married'].astype('category').cat.set_categories(X_train11['Married'].cat.categories)
@@ -61,8 +56,6 @@ X_test11['Self_Employed'] = X_test11['Self_Employed'].astype('category').cat.set
 X_test11['Property_Area'] = X_test11['Property_Area'].astype('category').cat.set_categories(X_train11['Property_Area'].cat.categories)
 
 test_dataset = pd.read_csv('https://raw.githubusercontent.com/dphi-official/Datasets/master/Loan_Data/loan_test.csv')
-
-test_dataset.describe()
 
 test_dataset.head()
 
@@ -89,21 +82,11 @@ for c in missing_levels_cols41:
 
 # Select only those columns which are there in training data
 test_dataset=test_dataset[X_train11.columns]
-#print(test_dataset)
 
 xgclf = xgb.XGBClassifier(
     tree_method="hist", enable_categorical=True, max_cat_to_onehot=6)
 
 xgclf.fit(X_train11, y_train11)
-
-#print(xgclf)
-
-
-#print(f1_score(y_train11,xgclf.predict(X_train11)))
-
-#print(xgclf.predict(X_test11))
-
-#print(f1_score(y_test11,xgclf.predict(X_test11)))
 
 X_train11.shape
 
@@ -115,8 +98,6 @@ final_tst
 final_tst.info()
 
 predictions1 = xgclf.predict(final_tst)
-
-#print(predictions1)
 
 #save the model 
 filename = 'xgboost_loanpred_model.pkl'
