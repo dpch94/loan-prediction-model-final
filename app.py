@@ -28,10 +28,8 @@ def predict():
 
         data_in = request.form.to_dict()      
 
-        labels = ['not granted','granted']      
-
-
-        pred_df = pd.DataFrame.from_dict([data_in.values()], columns=data_in.keys())
+        labels = ['not granted','granted']
+        pred_df = pd.DataFrame([data_in.values()], columns=data_in.keys())
         print(pred_df)
 
         pred_df['Gender'] = pred_df['Gender'].astype('category')
