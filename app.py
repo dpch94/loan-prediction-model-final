@@ -5,8 +5,6 @@ from flask import Flask, request, jsonify, render_template
 import pickle
 import os
 
-from xgboostclassifier_model import X_train11
-
 #app name
 app = Flask(__name__)
 
@@ -28,11 +26,12 @@ def predict():
     data_in = None
     if request.method == 'POST':
 
-        data_in = request.form.to_dict()
+        data_in = request.form.to_dict()      
 
-        labels = ['not granted','granted']
+        labels = ['not granted','granted']      
 
-        pred_df = pd.DataFrame([data_in.values()], columns=data_in.keys())
+
+        pred_df = pd.DataFrame.from_dict([data_in.values()], columns=data_in.keys())
         print(pred_df)
 
         pred_df['Gender'] = pred_df['Gender'].astype('category')
