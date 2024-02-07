@@ -42,7 +42,7 @@ def predict():
         pred_df['Self_Employed'] = pred_df['Self_Employed'].astype('category')
         pred_df['Property_Area'] = pred_df['Property_Area'].astype('category')
         
-        pred_df['ApplicantIncome'] = pred_df['ApplicantIncome'].astype('int64')
+        pred_df['ApplicantIncome'] = pred_df['ApplicantIncome'].astype('float64')
         pred_df['CoapplicantIncome'] = pred_df['CoapplicantIncome'].astype('float64')
         pred_df['LoanAmount'] = pred_df['LoanAmount'].astype('float64')
         pred_df['Loan_Amount_Term'] = pred_df['Loan_Amount_Term'].astype('float64')
