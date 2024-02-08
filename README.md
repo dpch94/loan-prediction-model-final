@@ -4,4 +4,4 @@ A web app has been built using Python's Flask framework and deployed on Vercel.
 
 Below link can be used to chek the working of the Loan Prediction model
 
-https://applicant-loan-prediction.vercel.app/
+https://applicant-loan-prediction-model.vercel.app/
